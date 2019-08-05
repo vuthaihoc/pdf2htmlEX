@@ -56,12 +56,6 @@ RUN cd / && \
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64
 ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/lib64/pkgconfig
 
-# Install pdf2htmlEX
-RUN cd / && \
-    git clone https://github.com/iapain/pdf2htmlEX.git && \
-    cd pdf2htmlEX && ls && \
-    cmake . && make && sudo make install
-
 # Install ttfautohint
 RUN cd / && \
     wget http://download.savannah.gnu.org/releases/freetype/ttfautohint-0.97.tar.gz && \
@@ -69,6 +63,12 @@ RUN cd / && \
     cd ttfautohint-0.97 && \
     ./configure --without-qt && \
     make && make install
+
+# Install pdf2htmlEX
+RUN cd / && \
+    git clone https://github.com/iapain/pdf2htmlEX.git && \
+    cd pdf2htmlEX && \
+    cmake . && make && sudo make install
 
 RUN rm -rf /root/.ssh && \
     rm -rf /fontforge* /libspiro* /poppler* /pdf2htmlEX /libiconv* /ttfautohint*
