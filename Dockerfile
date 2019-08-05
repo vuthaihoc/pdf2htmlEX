@@ -59,7 +59,7 @@ ENV PKG_CONFIG_PATH $PKG_CONFIG_PATH:/usr/lib64/pkgconfig
 # Install pdf2htmlEX
 RUN cd / && \
     git clone https://github.com/iapain/pdf2htmlEX.git && \
-    cd pdf2htmlEX && \
+    cd pdf2htmlEX && ls && \
     cmake . && make && sudo make install
 
 # Install ttfautohint
