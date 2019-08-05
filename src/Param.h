@@ -38,6 +38,8 @@ struct Param
     std::string css_filename;
     std::string page_filename;
     std::string outline_filename;
+    std::string font_dir;
+    std::string image_dir;
     int process_nontext;
     int process_outline;
     int process_annotation;

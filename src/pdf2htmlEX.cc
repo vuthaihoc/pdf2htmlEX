@@ -160,6 +160,8 @@ void parse_options (int argc, char **argv)
         .add("printing", &param.printing, 1, "enable printing support")
         .add("fallback", &param.fallback, 0, "output in fallback mode")
         .add("tmp-file-size-limit", &param.tmp_file_size_limit, -1, "Maximum size (in KB) used by temporary files, -1 for no limit")
+	.add("font-dir", &param.font_dir, "fonts", "dir where fonts should be placed (relative to data-dir)")
+	.add("image-dir", &param.image_dir, "images", "dir where images should be placed(relative to data-dir)")
 
         // fonts
         .add("embed-external-font", &param.embed_external_font, 1, "embed local match for external fonts")
@@ -380,6 +382,8 @@ int main(int argc, char **argv)
     try
     {
         create_directories(param.dest_dir);
+	create_directories(param.dest_dir.c_str() + "/" + params.font_dir.c_str());
+	create_directories(params.dest_dir.c_str() + "/" + params.image_dir.c_str());
     }
     catch (const string & s)
     {
