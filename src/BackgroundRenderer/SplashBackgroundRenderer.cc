@@ -133,7 +133,7 @@ void SplashBackgroundRenderer::embed_image(int pageno)
     if((xmin <= xmax) && (ymin <= ymax))
     {
         {
-            auto fn = html_renderer->str_fmt("%s/bg%x.%s", (param.embed_image ? param.tmp_dir : param.dest_dir).c_str(), pageno, format.c_str());
+            auto fn = html_renderer->str_fmt("%s/bg%x.%s", (param.embed_image ? param.tmp_dir : param.dest_dir + "/" + param.image_dir).c_str(), pageno, format.c_str());
             if(param.embed_image)
                 html_renderer->tmp_files.add((char*)fn);
 

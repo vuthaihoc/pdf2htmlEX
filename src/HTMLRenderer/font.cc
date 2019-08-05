@@ -1030,7 +1030,7 @@ void HTMLRenderer::export_remote_font(const FontInfo & info, const string & form
              << "src:url(";
 
     {
-        auto fn = str_fmt("f%llx.%s", info.id, format.c_str());
+        auto fn = str_fmt("%s/f%llx.%s", param.font_dir.c_str(), info.id, format.c_str());
         if(param.embed_font)
         {
             auto path = param.tmp_dir + "/" + (char*)fn;
