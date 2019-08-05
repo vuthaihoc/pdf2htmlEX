@@ -813,7 +813,7 @@ void HTMLRenderer::embed_font(const string & filepath, GfxFont * font, FontInfo 
      * We need to reload in order to retrieve/fix accurate ascent/descent, some info won't be written to the font by fontforge until saved.
      */
     string fn = (char*)str_fmt("%s/f%llx.%s", 
-        (param.embed_font ? param.tmp_dir : (param.dest_dir + "/" + param.font_dir)).c_str()
+        (param.embed_font ? param.tmp_dir : (param.dest_dir + "/" + param.font_dir)).c_str(),
         info.id, param.font_format.c_str());
 
     if(param.embed_font)
