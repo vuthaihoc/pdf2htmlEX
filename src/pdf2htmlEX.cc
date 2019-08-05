@@ -382,8 +382,8 @@ int main(int argc, char **argv)
     try
     {
         create_directories(param.dest_dir);
-	create_directories(param.dest_dir.c_str() + "/" + params.font_dir.c_str());
-	create_directories(params.dest_dir.c_str() + "/" + params.image_dir.c_str());
+	create_directories(param.dest_dir.c_str() + "/" + param.font_dir.c_str());
+	create_directories(params.dest_dir.c_str() + "/" + param.image_dir.c_str());
     }
     catch (const string & s)
     {
